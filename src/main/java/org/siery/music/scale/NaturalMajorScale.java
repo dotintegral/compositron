@@ -4,18 +4,18 @@ import java.util.List;
 
 import org.siery.music.pitch.Note;
 
-public class NaturalMinorScale extends Scale {
+public class NaturalMajorScale extends Scale {
 
-	public NaturalMinorScale(Note note) {
+	public NaturalMajorScale(Note note) {
 		super(note);
 		
 		intervals.add(new Integer(0));
 		intervals.add(new Integer(2));
-		intervals.add(new Integer(3));
+		intervals.add(new Integer(4));
 		intervals.add(new Integer(5));
 		intervals.add(new Integer(7));
-		intervals.add(new Integer(8));
-		intervals.add(new Integer(10));
+		intervals.add(new Integer(9));
+		intervals.add(new Integer(11));
 	}
 
 }
