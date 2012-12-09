@@ -24,4 +24,23 @@ public enum Note {
 	public int getInterval() {
 		return this.interval;
 	}
+	
+	public Note incrementBy(int interval) {
+		int newInterval = (this.interval + interval) % 12;
+		
+		if(newInterval < 0) {
+			newInterval = newInterval + 12;
+		}
+		
+		Note newNote = Note.C;
+		
+		for(Note enumNote : values()) {
+			if(enumNote.getInterval() == newInterval) {
+				newNote = enumNote;
+				break;
+			}
+		}
+		
+		return newNote;
+	}
 }
