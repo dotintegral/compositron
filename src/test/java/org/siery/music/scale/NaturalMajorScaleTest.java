@@ -1,6 +1,7 @@
 package org.siery.music.scale;
 
 import static org.junit.Assert.*;
+
 import java.util.List;
 import org.junit.Test;
 import org.siery.music.pitch.Note;
@@ -22,5 +23,26 @@ public class NaturalMajorScaleTest {
 		assertEquals(Note.A, notes.get(5));
 		assertEquals(Note.B, notes.get(6));
 	}
+	
+	@Test
+	public void testGetChordNotes() throws NotInScaleException {
+		NaturalMajorScale cMajor = new NaturalMajorScale(Note.C);
+		
+		List<Note> eChord = cMajor.getChordNotes(Note.C);
+		assertEquals(Note.C, eChord.get(0));
+		assertTrue( eChord.contains(Note.E) );
+		assertTrue( eChord.contains(Note.G) );
 
+		List<Note> aChord = cMajor.getChordNotes(Note.A);
+		assertEquals(Note.A, aChord.get(0));
+		assertTrue( aChord.contains(Note.C) );
+		assertTrue( aChord.contains(Note.E) );
+	}
+	
+	@Test(expected=NotInScaleException.class)
+	public void testGetChordNotesThrowsNotInScaleException () throws NotInScaleException {
+
+		NaturalMajorScale cMajor = new NaturalMajorScale(Note.C);
+		List<Note> chord = cMajor.getChordNotes(Note.Fs);
+	}
 }

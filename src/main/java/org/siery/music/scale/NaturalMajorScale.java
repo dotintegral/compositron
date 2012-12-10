@@ -1,7 +1,5 @@
 package org.siery.music.scale;
 
-import java.util.List;
-
 import org.siery.music.pitch.Note;
 
 public class NaturalMajorScale extends Scale {
@@ -17,5 +15,4 @@ public class NaturalMajorScale extends Scale {
 		intervals.add(new Integer(9));
 		intervals.add(new Integer(11));
 	}
-
 }

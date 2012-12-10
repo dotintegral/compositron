@@ -24,4 +24,24 @@ public abstract class Scale {
 		
 		return notes;
 	}
+	
+	// TODO: Create obj, eg. ChordNotes, use instead of List of Notes
+	public List<Note> getChordNotes(Note root) throws NotInScaleException {
+	
+		List<Note> scaleNotes = getScaleNotes();
+		
+		if(!scaleNotes.contains(root)) {
+			throw new NotInScaleException();
+		}
+
+		int rootNoteIndex = scaleNotes.indexOf(root);
+		int scaleSize = scaleNotes.size();
+		
+		List<Note> chordNotes = new ArrayList<Note>();
+		chordNotes.add(scaleNotes.get(rootNoteIndex));
+		chordNotes.add(scaleNotes.get( (rootNoteIndex+2) % scaleSize ));
+		chordNotes.add(scaleNotes.get( (rootNoteIndex+4) % scaleSize ));
+		
+		return chordNotes;
+	}
 }
