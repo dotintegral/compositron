@@ -3,20 +3,20 @@ package org.siery.music.scale;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.siery.music.pitch.Note;
+import org.siery.music.pitch.Pitch;
 
 public abstract class Scale {
 	
-	protected Note rootNote;
+	protected Pitch rootNote;
 	protected List<Integer> intervals;
 	
-	public Scale(Note note) {
+	public Scale(Pitch note) {
 		this.rootNote = note;
 		intervals = new ArrayList<Integer>();
 	}
 	
-	public List<Note> getScaleNotes() {
-		List<Note> notes = new ArrayList<Note>();
+	public List<Pitch> getScalePitches() {
+		List<Pitch> notes = new ArrayList<Pitch>();
 		
 		for(Integer interval : intervals) {
 			notes.add(rootNote.incrementBy(interval));
@@ -26,9 +26,9 @@ public abstract class Scale {
 	}
 	
 	// TODO: Create obj, eg. ChordNotes, use instead of List of Notes
-	public List<Note> getChordNotes(Note root) throws NotInScaleException {
+	public List<Pitch> getChordPitches(Pitch root) throws NotInScaleException {
 	
-		List<Note> scaleNotes = getScaleNotes();
+		List<Pitch> scaleNotes = getScalePitches();
 		
 		if(!scaleNotes.contains(root)) {
 			throw new NotInScaleException();
@@ -37,7 +37,7 @@ public abstract class Scale {
 		int rootNoteIndex = scaleNotes.indexOf(root);
 		int scaleSize = scaleNotes.size();
 		
-		List<Note> chordNotes = new ArrayList<Note>();
+		List<Pitch> chordNotes = new ArrayList<Pitch>();
 		chordNotes.add(scaleNotes.get(rootNoteIndex));
 		chordNotes.add(scaleNotes.get( (rootNoteIndex+2) % scaleSize ));
 		chordNotes.add(scaleNotes.get( (rootNoteIndex+4) % scaleSize ));

@@ -1,10 +1,10 @@
 package org.siery.music.scale;
 
-import org.siery.music.pitch.Note;
+import org.siery.music.pitch.Pitch;
 
 public class NaturalMajorScale extends Scale {
 
-	public NaturalMajorScale(Note note) {
+	public NaturalMajorScale(Pitch note) {
 		super(note);
 		
 		intervals.add(new Integer(0));

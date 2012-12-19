@@ -2,10 +2,10 @@ package org.siery.music.pitch;
 
 public class Tone {
 	
-	private Note note;
+	private Pitch note;
 	private Octave octave;
 	
-	public Tone(Note note, Octave octave) {
+	public Tone(Pitch note, Octave octave) {
 		this.note = note;
 		this.octave = octave;
 	}

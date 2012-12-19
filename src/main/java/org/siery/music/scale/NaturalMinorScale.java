@@ -2,11 +2,11 @@ package org.siery.music.scale;
 
 import java.util.List;
 
-import org.siery.music.pitch.Note;
+import org.siery.music.pitch.Pitch;
 
 public class NaturalMinorScale extends Scale {
 
-	public NaturalMinorScale(Note note) {
+	public NaturalMinorScale(Pitch note) {
 		super(note);
 		
 		intervals.add(new Integer(0));
