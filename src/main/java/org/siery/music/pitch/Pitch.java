@@ -25,6 +25,16 @@ public enum Pitch {
 		return this.interval;
 	}
 	
+	public int getIntervalTo(Pitch pitch) {
+		int interval = pitch.getInterval() - this.getInterval();
+		
+		if(interval < 0) {
+			interval += 12;
+		}
+		
+		return interval;
+	}
+	
 	public Pitch incrementBy(int interval) {
 		int newInterval = (this.interval + interval) % 12;
 		

@@ -3,13 +3,12 @@ package org.siery.music.chord;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.siery.music.Type;
 import org.siery.music.pitch.Pitch;
 
 public class Chord {
 
 	List<Pitch> pitches;
-	Type type;
+	ChordType type;
 	
 	public Chord() {
 		this.pitches = new ArrayList<Pitch>();
@@ -28,13 +27,17 @@ public class Chord {
 	}
 	
 	private void checkType() {
-		if(pitches.size() >= 3) {
-			Pitch root = pitches.get(0);
-			Pitch second = pitches.get(1);
-			Pitch third = pitches.get(2);
-			
-			
+		if(pitches.size() == 3) {
+			checkChordOf3();
 		}
+	}
+	
+	private void checkChordOf3() {
+		Pitch root = pitches.get(0);
+		Pitch second = pitches.get(1);
+		Pitch third = pitches.get(2);
+		
+		
 	}
 	
 	public List<Pitch> getPitches() {

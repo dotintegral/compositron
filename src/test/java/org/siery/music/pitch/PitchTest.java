@@ -27,5 +27,13 @@ public class PitchTest {
 		assertEquals(Pitch.A, Pitch.E.incrementBy(-7));
 		assertEquals(Pitch.E, Pitch.A.incrementBy(-5));
 	}
+	
+	@Test
+	public void testGetIntervalDifference() {
+		assertEquals(2, Pitch.C.getIntervalTo(Pitch.D));
+		assertEquals(10, Pitch.D.getIntervalTo(Pitch.C));
+		assertEquals(4, Pitch.F.getIntervalTo(Pitch.A));
+		assertEquals(8, Pitch.A.getIntervalTo(Pitch.F));
+	}
 
 }
