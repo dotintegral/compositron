@@ -25,6 +25,7 @@ public class ChordNoteTest {
 		ChordNote AminNote = new ChordNote(Amin, 1/4);
 		
 		assertEquals(ChordType.MINOR, AminNote.getType());
+		assertEquals(1/4, AminNote.getDuration(), 0.001);
 	}
 
 }

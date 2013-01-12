@@ -23,4 +23,9 @@ public class ToneNote extends Tone implements Note {
 		return duration;
 	}
 
+	@Override
+	public void setDuration(float duration) {
+		this.duration = duration;
+	}
+
 }

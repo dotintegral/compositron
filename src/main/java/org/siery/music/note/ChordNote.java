@@ -16,4 +16,9 @@ public class ChordNote extends Chord implements Note {
 		return duration;
 	}
 
+	@Override
+	public void setDuration(float duration) {
+		this.duration = duration;
+	}
+
 }

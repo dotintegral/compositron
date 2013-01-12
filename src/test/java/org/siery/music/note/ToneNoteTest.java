@@ -15,11 +15,13 @@ public class ToneNoteTest {
 		
 		assertEquals(Pitch.A, toneNote.getPitch());
 		assertEquals(Octave._4, toneNote.getOctave());
+		assertEquals(1/4, toneNote.getDuration(), 0.001);
 		
 		toneNote = new ToneNote(new Tone(Pitch.C, Octave._3), 1/4);
 		
 		assertEquals(Pitch.C, toneNote.getPitch());
 		assertEquals(Octave._3, toneNote.getOctave());
+		assertEquals(1/4, toneNote.getDuration(), 0.001);
 	}
 
 }
