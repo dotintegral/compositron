@@ -2,8 +2,8 @@ package org.siery.music.pitch;
 
 public class Tone {
 	
-	private Pitch pitch;
-	private Octave octave;
+	protected Pitch pitch;
+	protected Octave octave;
 	
 	public Tone(Pitch pitch, Octave octave) {
 		this.pitch = pitch;
@@ -12,6 +12,10 @@ public class Tone {
 	
 	public Pitch getPitch() {
 		return pitch;
+	}
+	
+	public Octave getOctave() {
+		return octave;
 	}
 	
 	public int getMidiNote() {

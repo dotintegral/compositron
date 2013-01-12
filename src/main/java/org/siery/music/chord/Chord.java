@@ -8,10 +8,10 @@ import org.siery.music.pitch.Tone;
 
 public class Chord {
 
-	List<Tone> tones;
-	ChordType type = null;
+	protected List<Tone> tones;
+	protected ChordType type = null;
 	
-	private Chord() {
+	protected Chord() {
 		this.tones = new ArrayList<Tone>();
 	}
 	
