@@ -4,28 +4,29 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.siery.music.pitch.Pitch;
+import org.siery.music.pitch.Tone;
 
 public class Chord {
 
-	List<Pitch> pitches;
+	List<Tone> tones;
 	ChordType type = null;
 	
 	private Chord() {
-		this.pitches = new ArrayList<Pitch>();
+		this.tones = new ArrayList<Tone>();
 	}
 	
-	public static Chord fromList(List<Pitch> pitches) {
+	public static Chord fromList(List<Tone> tones) {
 		Chord chord = new Chord();
 		
-		for(Pitch p : pitches) {
-			chord.pitches.add(p);
+		for(Tone t : tones) {
+			chord.tones.add(t);
 		}
 		
 		return chord;
 	}
 	
 	private void checkType() {
-		if(pitches.size() == 3) {
+		if(tones.size() == 3) {
 			checkChordOf3();
 		} else {
 			this.type = ChordType.UNKNOWN;
@@ -33,9 +34,9 @@ public class Chord {
 	}
 	
 	private void checkChordOf3() {
-		Pitch root = pitches.get(0);
-		Pitch second = pitches.get(1);
-		Pitch third = pitches.get(2);
+		Pitch root = tones.get(0).getPitch();
+		Pitch second = tones.get(1).getPitch();
+		Pitch third = tones.get(2).getPitch();
 		
 		if(root.getIntervalTo(second) == 3 && second.getIntervalTo(third) == 4) {
 			this.type = ChordType.MINOR;
@@ -55,7 +56,7 @@ public class Chord {
 		return type;
 	}
 	
-	public List<Pitch> getPitches() {
-		return pitches;
+	public List<Tone> getTones() {
+		return tones;
 	}
 }
