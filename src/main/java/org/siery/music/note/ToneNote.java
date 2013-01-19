@@ -6,25 +6,25 @@ import org.siery.music.pitch.Tone;
 
 public class ToneNote extends Tone implements Note {
 
-	protected float duration;
+	protected double duration;
 
-	public ToneNote(Tone tone, float duration) {
+	public ToneNote(Tone tone, double duration) {
 		super(tone.getPitch(), tone.getOctave());
 		this.duration = duration;
 	}
 	
-	public ToneNote(Pitch pitch, Octave octave, float duration) {
+	public ToneNote(Pitch pitch, Octave octave, double duration) {
 		super(pitch, octave);
 		this.duration = duration;
 	}
 	
 	@Override
-	public float getDuration() {
+	public double getDuration() {
 		return duration;
 	}
 
 	@Override
-	public void setDuration(float duration) {
+	public void setDuration(double duration) {
 		this.duration = duration;
 	}
 
