@@ -34,6 +34,12 @@ public class MeasureTest {
 		measure.add(new ToneNote(Pitch.E, Octave._4, 1./4.));
 	}
 	
+	@Test
+	public void testGetNotes() {
+		assertEquals(2, measure.getNotes().size());
+		assertEquals(Pitch.A, ( (ToneNote)measure.getNotes().get(0)).getPitch() );
+	}
+	
 
 	@Test(expected=InvalidMeasureLengthException.class)
 	public void testAddThrowsInvalidMeasureLengthExceprion() throws InvalidMeasureLengthException {

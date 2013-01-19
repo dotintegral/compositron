@@ -34,6 +34,10 @@ public class Measure {
 		}
 	}
 	
+	public List<Note> getNotes() {
+		return this.notes;
+	}
+	
 	public float getDuration() {
 		float totalLength = 0;
 		
