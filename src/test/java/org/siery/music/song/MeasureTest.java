@@ -21,8 +21,8 @@ public class MeasureTest {
 	}
 	
 	@Test
-	public void testGetNoteLengths() {
-		float length = measure.getNoteLengths();
+	public void testGetDuration() {
+		float length = measure.getDuration();
 		
 		if(length > 0.751 || length < 0.749) {
 			fail();

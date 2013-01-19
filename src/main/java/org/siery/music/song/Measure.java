@@ -22,7 +22,7 @@ public class Measure {
 	}
 	
 	private void checkIfNoteCanBeAdded(Note note) throws InvalidMeasureLengthException {
-		float totalLength = getNoteLengths();
+		float totalLength = getDuration();
 		totalLength += note.getDuration();
 
 		checkTotalLenght(totalLength);
@@ -34,7 +34,7 @@ public class Measure {
 		}
 	}
 	
-	public float getNoteLengths() {
+	public float getDuration() {
 		float totalLength = 0;
 		
 		for(Note n : notes) {
